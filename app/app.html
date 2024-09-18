@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Gestionnaire de budget et dépense</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <p class="title">App de gestion de budget</p>
+        </div>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="#">
+                        <span class="material-symbols-outlined">
+                            move_up
+                        </span>
+                        <p>Transactions</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            emoji_objects
+                        </span>
+                        <p>Objectif</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <div class="budget__container">
+                <div class="budget">
+                    <p>Solde actuel</p>
+                    <span id="currentBallance">0f</span>
+                    <button id="add">
+                        <span class="material-symbols-outlined">
+                            add_circle
+                        </span>
+                        <span>Ajouter</span>
+                    </button>
+                    <div>
+                        <span class="material-symbols-outlined" id="remove">
+                            cancel
+                        </span>
+                    </div>
+                </div>
+                <div id="inputContainer" class="input-container">
+                    <input type="number" id="newValue" placeholder="Entrez un montant">
+                    <button id="okButton">OK</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
