@@ -13,7 +13,13 @@
             <p class="title">App de gestion de budget</p>
         </div>
     </header>
+
+    <!--------------- Section fonctionnelle ---------------------->
+
     <main>
+
+        <!--------------  Barre de navigation ------------------------------>
+
         <nav>
             <ul>
                 <li><a href="#">
@@ -34,6 +40,9 @@
             </ul>
         </nav>
         <section>
+
+            <!--------------- Gestion des budgets ----------------------------->
+
             <div class="budget__container">
                 <div class="budget">
                     <p>Solde actuel</p>
@@ -53,6 +62,28 @@
                 <div id="inputContainer" class="input-container">
                     <input type="number" id="newValue" placeholder="Entrez un montant">
                     <button id="okButton">OK</button>
+                </div>
+            </div>
+
+            <!--------------Gestion des dépenses ------------------------>
+
+            <div class="depenses__section">
+                <div class="depenses__section__container">
+                    <p class="depenses__title">Gérez vos dépenses</p>
+                    <div class="table-container">
+                        <table id="productTable">
+                            <thead>
+                                <tr>
+                                    <th>Article</th>
+                                    <th>Prix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Les lignes seront ajoutées ici par JavaScript -->
+                            </tbody>
+                        </table>
+                        <button id="addRowBtn">+</button>
+                    </div>
                 </div>
             </div>
         </section>

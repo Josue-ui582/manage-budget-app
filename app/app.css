@@ -72,13 +72,14 @@ main{
 section{
     width: 100%;
     margin-top: 50px;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .budget{
     display: flex;
     gap: 5px;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .budget > p{
@@ -112,9 +113,8 @@ section{
 .budget__container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 25px;
 }
 
 #inputContainer {
@@ -135,4 +135,65 @@ section{
     padding: 6px 8px;
     cursor: pointer;
     border: none;
+}
+
+.depenses__section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.depenses__section__container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.depenses__title{
+    margin-bottom: 2rem;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.table-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+button#addRowBtn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+button#addRowBtn:hover {
+    background-color: #218838;
 }
