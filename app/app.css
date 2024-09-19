@@ -123,11 +123,18 @@ section{
     display: none;
 }
 
+#inputContainer_2 {
+    display: flex;
+    gap: 15px;
+    display: none;
+}
+
 #inputContainer > input {
     padding: 4px 4px;
     outline: none;
     font-size: 18px;
     border-radius: 5px;
+    border: 0.5px solid rgb(176, 174, 174);
 }
 
 #inputContainer > button{
@@ -196,4 +203,72 @@ button#addRowBtn {
 
 button#addRowBtn:hover {
     background-color: #218838;
+}
+
+.revenu__section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.revenu__section__container{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.revenu__title{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.revenu__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 15px;
+}
+
+.revenu__container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.revenu__container > div > button{
+    border-radius: 100%;
+    padding: 10px 12px;
+    font-size: 25px;
+    cursor: pointer;
+    border: transparent;
+}
+
+.revenu__container > div > button:hover{
+    background-color: rgb(98, 98, 255);
+    color: white;
+}
+
+.revenu__container > div > p{
+    font-weight: 500;
+}
+
+.input-container_2 > input{
+    outline: none;
+    padding: 4px 2px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 0.5px solid rgb(176, 174, 174);
+}
+
+.input-container_2 > button{
+    border-radius: 100%;
+    padding: 2px 6px;
+    cursor: pointer;
+    border: none;
 }
