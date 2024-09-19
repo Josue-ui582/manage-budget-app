@@ -123,10 +123,22 @@ section{
     display: none;
 }
 
-#inputContainer_2 {
+#inputContainer_2, .input-container_3, .input-container_4, .input-container_5, .input-container_6 {
     display: flex;
     gap: 15px;
     display: none;
+}
+
+.input-container_2, .input-container_3, .input-container_4, .input-container_5, .input-container_6 {
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    padding: 10px;
+}
+
+.input-container_2.open, .input-container_3.open, .input-container_4.open, .input-container_5.open, .input-container_6.open {
+    max-height: 100px;
 }
 
 #inputContainer > input {
@@ -230,6 +242,7 @@ button#addRowBtn:hover {
     justify-content: space-evenly;
     width: 100%;
     gap: 15px;
+    position: relative;
 }
 
 .revenu__container > div {
@@ -257,16 +270,20 @@ button#addRowBtn:hover {
     font-weight: 500;
 }
 
-.input-container_2 > input{
+.input-container_2 > input, .input-container_3 > input, .input-container_4 > input, .input-container_5 > input, .input-container_6 > input{
     outline: none;
     padding: 4px 2px;
     font-size: 20px;
     border-radius: 5px;
+    border:  0.5px solid rgb(183, 175, 175);
 }
 
-.input-container_2 > button{
+.input-container_2 > button, .input-container_3 > button, .input-container_4 > button, .input-container_5 > button, .input-container_6 > button{
     border-radius: 100%;
     padding: 2px 6px;
     cursor: pointer;
     border: none;
 }
+
+/* La section responsive */
+
