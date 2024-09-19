@@ -287,3 +287,17 @@ button#addRowBtn:hover {
 
 /* La section responsive */
 
+@media (max-width : 813px) {
+    main{
+        gap: 5px;
+    }
+    section{
+        margin-left: 2px;
+    }
+}
+
+@media (max-width : 537px) {
+    nav{
+        display: none;
+    }
+}
