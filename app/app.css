@@ -248,7 +248,7 @@ button#addRowBtn {
 }
 
 button#addRowBtn:hover {
-    background-color: #218838;
+    background-color: rgb(173, 173, 255);
 }
 
 .revenu__section{
