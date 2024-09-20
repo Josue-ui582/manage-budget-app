@@ -11,6 +11,10 @@ body{
     background-color: rgb(255, 255, 255);
 }
 
+main{
+    height: 60vh;
+}
+
 .header{
     display: flex;
     justify-content: center;
@@ -33,7 +37,37 @@ nav{
     margin-left: 15px;
     width: 180px;
     border-right: 1px solid rgb(213, 210, 210);
-    height: 100vh;
+    height: 25vh;
+}
+
+.show{
+    display: block;
+    transform: translateX(0);
+    position: absolute;
+    border-right: none;
+    background-color: rgb(240, 237, 237);
+    border-radius: 10px;
+    width: 200px;
+    height: 20vh;
+}
+
+.menu__icon{
+    display: flex;
+    position: absolute;
+}
+
+.back{
+    display: none;
+    color: rgb(157, 157, 255);
+}
+
+.close{
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 90px;
+    z-index: 1000;
+    color: rgb(157, 157, 255);
 }
 
 nav ul{
@@ -41,6 +75,7 @@ nav ul{
     flex-direction: column;
     gap: 20px;
     margin-right: 10px;
+    
 }
 
 nav ul li{
@@ -203,7 +238,7 @@ button#addRowBtn {
     bottom: 0;
     right: 0;
     font-size: 24px;
-    background-color: #28a745;
+    background-color: rgb(157, 157, 255);
     color: white;
     border: none;
     border-radius: 50%;
@@ -222,6 +257,7 @@ button#addRowBtn:hover {
     align-items: center;
     margin-top: 50px;
     width: 100%;
+    margin-bottom: 10rem;
 }
 
 .revenu__section__container{
@@ -299,5 +335,71 @@ button#addRowBtn:hover {
 @media (max-width : 537px) {
     nav{
         display: none;
+    }
+
+    .back{
+        display: block;
+        position: absolute;
+        margin-top: 30px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    
+    input{
+        font-size: 10px;
+    }
+    .header .title{
+        color: white;
+        font-size: 15px;
+        text-align: center;
+    }
+    .header{
+        height: 15vh;
+    }
+    
+    .budget > p{
+        font-size: 15px;
+        color: rgb(58, 57, 57);
+    }
+    .budget > button{
+        gap: 2px;
+        cursor: pointer;
+        color: rgb(98, 98, 255);
+        border: none;
+        padding: 1px 3px;
+        font-size: 12px;
+    }
+    .budget > span{
+        font-size: 15px;
+        font-weight: 700;
+    }
+    .depenses__title{
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .revenu__title{
+        margin-bottom: 2rem;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    tbody > tr > td {
+        border: 1px solid #ddd;
+        padding: 1px;
+        text-align: left;
+    }
+    #inputContainer_2, .input-container_3, .input-container_4, .input-container_5, .input-container_6 {
+        display: flex;
+        gap: 5px;
+        display: none;
+        position: absolute;
+        bottom: 0;
+        height: 6vh;
+        width: 100%;
+    }
+    #inputContainer_2{
+        left: 50px;
+    }
+    .input-container_4{
+        right: 20px;
     }
 }

@@ -47,7 +47,7 @@ document.getElementById('addRowBtn').addEventListener('click', function() {
     const productNameCell = document.createElement('td');
     const productNameInput = document.createElement('input');
     productNameInput.type = 'text';
-    productNameInput.placeholder = 'Nom de l\'article';
+    productNameInput.placeholder = 'Type de dépense';
     productNameInput.style.width = "100%";
     productNameInput.style.fontSize = "20px";
     productNameInput.style.padding = "5px";
@@ -59,7 +59,7 @@ document.getElementById('addRowBtn').addEventListener('click', function() {
     const productPriceCell = document.createElement('td');
     const productPriceInput = document.createElement('input');
     productPriceInput.type = 'number';
-    productPriceInput.placeholder = 'Prix de l\'article';
+    productPriceInput.placeholder = 'Coût de la dépense';
     productPriceInput.style.width = "100%";
     productPriceInput.style.fontSize = "20px";
     productPriceInput.style.padding = "5px";
@@ -238,4 +238,20 @@ document.querySelectorAll('.revenu__container > div').forEach((container, index)
             inputContainer.classList.add('open');
         }
     });
+});
+
+const back__icon = document.getElementById("back");
+const close__icon = document.getElementById("close");
+const nav__bar = document.getElementById("nav");
+
+back__icon.addEventListener("click", function () {
+    nav__bar.classList.add("show");
+    back__icon.style.display = "none";
+    close__icon.style.display = "block"
+});
+
+close__icon.addEventListener("click", function () {
+    nav__bar.classList.remove("show")
+    back__icon.style.display = "block"
+    close__icon.style.display = "none"
 });
