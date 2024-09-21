@@ -38,6 +38,27 @@ document.addEventListener("click", function (e) {
     }
 });
 
+async function updateBalance(newValue) {
+    try {
+        const response = await fetch("api/solde", {
+            method : "POST",
+            headers : {
+                "content type": "application/json",
+            },
+            body : JSON.stringify({solde_actuel : newValue})
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            currentBallance.innerText = `${result.solde_actuel} FCFA`;
+        }else {
+            console.error("Erreur lors de la mise à jour du solde")
+        }
+    } catch (error) {
+        console.error("Erreur réseaux", "error");
+    }
+}
+
 document.getElementById('addRowBtn').addEventListener('click', function() {
     
     const tableBody = document.querySelector('#productTable tbody');
