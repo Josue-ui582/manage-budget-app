@@ -12,5 +12,27 @@
             <p class="title">Gestionnaire de vos transactions</p>
         </div>
     </header>
+    <section>
+        <p class="titre">Gérez efficacement vos transaction en <strong>remplissant ce formulaire</strong>. Pour chaque dépense ou revenu que vous aurez effectué, renseignez vos données ici pour <strong>suivre vos transactions</strong></p>
+
+        <!---------------- Gestion des transaction --------------------------------->
+
+        <div class="transaction">
+            <form id="transactions">
+                <label for="type">Type de transaction</label>
+                <select name="type" id="type">
+                    <option value="revenu">Revenu</option>
+                    <option value="depense">Dépense</option>
+                </select>
+
+                <label for="amount">Montant</label>
+                <input type="number" id="amount" name="amount" required>
+
+                <button type="submit">Ajouter</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="../javascript/transfere.js" async></script>
 </body>
 </html>
