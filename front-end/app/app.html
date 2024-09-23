@@ -48,6 +48,14 @@
                         <p>Objectif</p>
                     </a>
                 </li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            dashboard
+                        </span>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <section>
@@ -65,14 +73,18 @@
                         <span>Ajouter</span>
                     </button>
                     <div>
-                        <span class="material-symbols-outlined" id="remove" title="supprimer solde">
-                            cancel
+                        <span class="material-symbols-outlined" id="historyIcon" title="Historiques">
+                            list
                         </span>
                     </div>
                 </div>
                 <div id="inputContainer" class="input-container">
                     <input type="number" id="newValue" placeholder="Entrez un montant">
                     <button id="okButton">OK</button>
+                </div>
+                <div id="historyContainer" style="display: none;">
+                    <h3>Historique des soldes</h3>
+                    <ul id="historyList"></ul>
                 </div>
             </div>
 
@@ -104,68 +116,103 @@
                 <div class="revenu__section__container">
                     <p class="revenu__title">Ajoutez vos revenus</p>
                     <div class="revenu__container">
-                        <div>
+                        <div class="revenu">
                             <button id="adde">
                                 <span class="material-symbols-outlined">
                                     price_check
                                 </span>
                             </button>
-                            <p>Salaire</p>
+                                <p>Salaire</p>
+                                <span class="material-symbols-outlined"                   id="historyIcon1"    title="Historiques">
+                                    list
+                                </span>
                             <div id="inputContainer_2" class="input-container_2">
                                 <input type="number" id="newValue_2" placeholder="Entrez un montant">
                                 <button id="okButton_2">OK</button>
                             </div>
+                            <div id="historyContainer1" style="display: none;">
+                                <h3>Historique des soldes</h3>
+                                <ul id="historyList1"></ul>
+                            </div>
                         </div>
 
-                        <div>
+                        <div class="revenu">
                             <button id="add_3">
                                 <span class="material-symbols-outlined">
                                     mintmark
                                 </span>
                             </button>
                             <p>Investissement</p>
+                            <span class="material-symbols-outlined"                   id="historyIcon2"    title="Historiques">
+                                list
+                            </span>
                             <div id="inputContainer_3" class="input-container_3">
                                 <input type="number" id="newValue_3" placeholder="Entrez un montant">
                                 <button id="okButton_3">OK</button>
                             </div>
+                            <div id="historyContainer2" style="display: none;">
+                                <h3>Historique des soldes</h3>
+                                <ul id="historyList2"></ul>
+                            </div>
                         </div>
 
-                        <div>
+                        <div class="revenu">
                             <button id="add_4">
                                 <span class="material-symbols-outlined">
                                     update
                                 </span>
                             </button>
                             <p>A temps partiel</p>
+                            <span class="material-symbols-outlined"                   id="historyIcon3"    title="Historiques">
+                                list
+                            </span>
                             <div id="inputContainer_4" class="input-container_4">
                                 <input type="number" id="newValue_4" placeholder="Entrez un montant">
                                 <button id="okButton_4">OK</button>
                             </div>
+                            <div id="historyContainer3" style="display: none;">
+                                <h3>Historique des soldes</h3>
+                                <ul id="historyList3"></ul>
+                            </div>
                         </div>
 
-                        <div>
+                        <div class="revenu">
                             <button id="add_5">
                                 <span class="material-symbols-outlined">
                                     paid
                                 </span>
                             </button>
                             <p>Imprévus</p>
+                            <span class="material-symbols-outlined"                   id="historyIcon4"    title="Historiques">
+                                list
+                            </span>
                             <div id="inputContainer_5" class="input-container_5">
                                 <input type="number" id="newValue_5" placeholder="Entrez un montant">
                                 <button id="okButton_5">OK</button>
                             </div>
+                            <div id="historyContainer4" style="display: none;">
+                                <h3>Historique des soldes</h3>
+                                <ul id="historyList4"></ul>
+                            </div>
                         </div>
 
-                        <div>
+                        <div class="revenu">
                             <button id="add_6">
                                 <span class="material-symbols-outlined">
                                     matter
                                 </span>
                             </button>
                             <p>Autres</p>
+                            <span class="material-symbols-outlined"                   id="historyIcon5"    title="Historiques">
+                                list
+                            </span>
                             <div id="inputContainer_6" class="input-container_6">
                                 <input type="number" id="newValue_6" placeholder="Entrez un montant">
                                 <button id="okButton_6">OK</button>
+                            </div>
+                            <div id="historyContainer5" style="display: none;">
+                                <h3>Historique des soldes</h3>
+                                <ul id="historyList5"></ul>
                             </div>
                         </div>
                     </div>
@@ -175,5 +222,11 @@
     </main>
 
     <script src="../javascript/app.js" async></script>
+    <script src="../javascript/depense.js" async></script>
+    <script src="../javascript/salaire.js" async></script>
+    <script src="../javascript/investissement.js" async></script>
+    <script src="../javascript/tempspartiel.js" async></script>
+    <script src="../javascript/imprevus.js" async></script>
+    <script src="../javascript/autres.js" async></script>
 </body>
 </html>

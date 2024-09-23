@@ -146,6 +146,7 @@ section{
 }
 
 .budget__container{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -188,6 +189,54 @@ section{
     padding: 6px 8px;
     cursor: pointer;
     border: none;
+}
+
+#historyContainer {
+    background-color: rgb(98, 98, 255);
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: none;
+    z-index: 1000;
+}
+
+#historyContainer > h3{
+    color: black;
+}
+
+#historyList {
+    list-style: none;
+    padding: 0;
+}
+
+.historique__section > span{
+    color: black;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.history-item button {
+    background-color: rgb(255, 71, 71);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.amount{
+    font-weight: 500;
 }
 
 .depenses__section{
@@ -260,6 +309,10 @@ button#addRowBtn:hover {
     margin-bottom: 10rem;
 }
 
+#historyIcon1, #historyIcon2, #historyIcon3, #historyIcon4, #historyIcon5{
+    cursor: pointer;
+}
+
 .revenu__section__container{
     width: 70%;
     margin: 0 auto;
@@ -278,6 +331,10 @@ button#addRowBtn:hover {
     justify-content: space-evenly;
     width: 100%;
     gap: 15px;
+    position: relative;
+}
+
+.revenu__container .revenu{
     position: relative;
 }
 
