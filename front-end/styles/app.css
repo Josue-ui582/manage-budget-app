@@ -378,6 +378,76 @@ button#addRowBtn:hover {
     border: none;
 }
 
+.revenu{
+    position: relative;
+    width: 200px;
+}
+
+.revenu > #historyContainer1, #historyContainer2, #historyContainer3, #historyContainer4, #historyContainer5{
+    position: absolute;
+    background-color: rgb(98, 98, 255);
+    padding: 10px;
+    border-radius: 10px;
+    top: 60px;
+    left: 0px;
+    right: 0px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: none;
+    z-index: 1000;
+}
+
+.revenu > #historyContainer1 > h3, #historyContainer2 > h3, #historyContainer3 > h3, #historyContainer4 > h3, #historyContainer5 > h3{
+    color: black;
+}
+
+.revenu > #historyList1, #historyList2, #historyList3, #historyList4, #historyList5 {
+    list-style: none;
+    padding: 0;
+}
+
+.revenu > .historique__section1 > span{
+    color: black;
+}
+
+.revenu > .history-item1, .revenu > .history-item2, .revenu > .history-item3, .revenu > .history-item3, .revenu > .history-item4, .revenu > .history-item5 {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.revenu > .history-item1 button, .history-item2 button, .history-item3 button, .history-item4 button, .history-item5 button {
+    background-color: rgb(255, 71, 71);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.revenu > .amount{
+    font-weight: 500;
+}
+
+.revenu > #historyContainer2{
+    position: absolute;
+}
+
+.revenu > #historyContainer3{
+    position: absolute;
+}
+
+.revenu > #historyContainer4{
+    position: absolute;
+}
+
+.revenu > #historyContainer5{
+    position: absolute;
+}
+
 /* La section responsive */
 
 @media (max-width : 813px) {
@@ -443,20 +513,5 @@ button#addRowBtn:hover {
         border: 1px solid #ddd;
         padding: 1px;
         text-align: left;
-    }
-    #inputContainer_2, .input-container_3, .input-container_4, .input-container_5, .input-container_6 {
-        display: flex;
-        gap: 5px;
-        display: none;
-        position: absolute;
-        bottom: 0;
-        height: 6vh;
-        width: 100%;
-    }
-    #inputContainer_2{
-        left: 50px;
-    }
-    .input-container_4{
-        right: 20px;
     }
 }
