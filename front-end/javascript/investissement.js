@@ -87,4 +87,4 @@ function removeAmount2 (index) {
 
     addedAmount2.splice(index, 1);
     upDateHistorique2();
-};
+}; 
