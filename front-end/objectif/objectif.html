@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/objectif.css">
+    <title>Définissez un objectif</title>
+</head>
+<body>
+    <header>
+        <div class="goal_header">
+            <div class="goal_header_container">
+                <p>Définissez et atteignez vos objectifs</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <!--<div>
+                <img src="../images/objectif-avatar.jpg" alt="avatar">
+            </div>-->
+            <form id="goalForm">
+                <label for="goalType">Type d'objectif :</label>
+                <select id="goalType" required>
+                    <option value="" disabled selected>Choisissez un objectif</option>
+                    <option value="voyage">Voyage</option>
+                    <option value="economiser">Économiser</option>
+                    <option value="acheter">Acheter</option>
+                    <option value="autre">Autre</option>
+                </select>
+            
+                <label for="goalBudget">Budget nécessaire</label>
+                <input type="number" id="goalBudget" placeholder="Montant en FCFA" required>
+            
+                <label for="goalDate">Date d'atteinte de l'objectif</label>
+                <input type="date" id="goalDate" required>
+            
+                <button type="submit">Ajouter l'objectif</button>
+            </form>
+            
+            <div class="goalList">
+                <ul id="goalList"></ul> <!-- Section pour afficher les objectifs -->
+            </div>
+        </section>
+    </main>
+
+    <script src="../javascript/objectif.js"></script>
+</body>
+</html>

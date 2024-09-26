@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.goal_header{
+    margin: 0 auto;
+    height: 20vh;
+    width: 99%;
+    background-color: rgb(74, 74, 255);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.goal_header_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+.goal_header_container > p {
+    color: white;
+    font-size: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+label {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+input, select {
+    padding: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+form > button {
+    padding: 5px 0;
+    background-color: rgb(74, 74, 255);
+    border: none;
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#goalList {
+    list-style-type: none;
+    padding: 0;
+    width: 400px;
+    height: 200px;
+}
+
+#goalList li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.goalList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}

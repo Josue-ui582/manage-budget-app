@@ -1,5 +1,8 @@
-document.getElementById('addRowBtn').addEventListener('click', function() {
-    
+
+
+const addRowBtn = document.getElementById('addRowBtn');
+
+function createRow() {
     const tableBody = document.querySelector('#productTable tbody');
     const newRow = document.createElement('tr');
 
@@ -31,6 +34,31 @@ document.getElementById('addRowBtn').addEventListener('click', function() {
     newRow.appendChild(productNameCell);
     newRow.appendChild(productPriceCell);
 
-    
     tableBody.appendChild(newRow);
-});
+
+    toggleRowState(newRow);
+}
+
+function toggleRowState(row) {
+    const productNameInput = row.querySelector('input[type="text"]');
+    const productPriceInput = row.querySelector('input[type="number"]');
+
+    productNameInput.classList.toggle('addingType');
+    
+    productPriceInput.classList.toggle('addingPrice');
+}
+
+function toggleInputClass() {
+    const lastRow = document.querySelector('#productTable tbody tr:last-child');
+    addRowBtn.classList.toggle('adding');
+
+    if (!lastRow || addRowBtn.textContent === '+' || addRowBtn.classList.contains('adding')) {
+        createRow();
+        addRowBtn.textContent = 'OK';
+    } else {
+        toggleRowState(lastRow);
+        addRowBtn.textContent = '+';
+    }
+}
+
+addRowBtn.addEventListener('click', toggleInputClass);

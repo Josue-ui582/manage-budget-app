@@ -1,7 +1,7 @@
 const add = document.getElementById("add");
 const inputContainer = document.getElementById("inputContainer");
 const okButton= document.getElementById("okButton");
-const currentBallance = document.getElementById("currentBallance");
+let currentBallance = document.getElementById("currentBallance");
 const newValueInput = document.getElementById("newValue");
 const removeSolde = document.getElementById("remove")
 const historyContainer = document.getElementById("historyContainer");
@@ -22,16 +22,21 @@ okButton.addEventListener("click", function () {
     const newValue = parseFloat(newValueInput.value);
 
     if (!isNaN(newValue) && newValue > 0) {
-        currentBallanceValue += newValue;
-        currentBallance.textContent = currentBallanceValue + 'FCFA';
+
+        let storedBudget = parseFloat(localStorage.getItem('storedBudget')) || 0;
+        storedBudget += newValue;
+        currentBallanceValue = storedBudget;
+        
+        localStorage.setItem('storedBudget', storedBudget);
+        currentBallance.textContent = storedBudget + ' FCFA';
 
         addedAmount.push(newValue);
+        localStorage.setItem('addedAmount', JSON.stringify(addedAmount));
         upDateHistorique();
     }
 
     newValueInput.value = '';
     inputContainer.style.display = "none"
-
 });
 
 historyIcon.addEventListener("click", function (e) {
@@ -58,8 +63,8 @@ document.addEventListener("click", function (event) {
 function upDateHistorique() {
     historyList.innerHTML = '';
 
+    
     addedAmount.forEach((amount, index) => {
-
         const listItem = document.createElement('li');
         listItem.classList.add('history-item');
 
@@ -75,18 +80,40 @@ function upDateHistorique() {
         });
 
         historyList.appendChild(listItem);
-    })
-};
+    });
+}
 
 function removeAmount(index) {
     const amountToRemove = addedAmount[index];
 
+    
     currentBallanceValue -= amountToRemove;
     currentBallance.textContent = currentBallanceValue + ' FCFA';
 
+    
     addedAmount.splice(index, 1);
+
+    
+    localStorage.setItem('storedBudget', currentBallanceValue);
+    localStorage.setItem('addedAmount', JSON.stringify(addedAmount));
+
+    
     upDateHistorique();
 }
+
+
+window.addEventListener('load', function () {
+    
+    let storedBudget = parseFloat(localStorage.getItem('storedBudget')) || 0;
+    currentBallanceValue = storedBudget;
+    currentBallance.textContent = storedBudget + ' FCFA';
+
+    addedAmount = JSON.parse(localStorage.getItem('addedAmount')) || [];
+    console.log("Historique des actions chargées : ", addedAmount);
+
+    upDateHistorique();
+});
+
 
 document.addEventListener("click", function (e) {
     const isClickInside = add.contains(e.target) || inputContainer.contains(e.target);
@@ -95,31 +122,10 @@ document.addEventListener("click", function (e) {
     }
 });
 
-async function updateBalance(newValue) {
-    try {
-        const response = await fetch("api/solde", {
-            method : "POST",
-            headers : {
-                "content type": "application/json",
-            },
-            body : JSON.stringify({solde_actuel : newValue})
-        });
-
-        if (response.ok) {
-            const result = await response.json();
-            currentBallance.innerText = `${result.solde_actuel} FCFA`;
-        }else {
-            console.error("Erreur lors de la mise à jour du solde")
-        }
-    } catch (error) {
-        console.error("Erreur réseaux", "error");
-    }
-}
-
 
 document.querySelectorAll('.revenu__container > div').forEach((container, index) => {
     const button = container.querySelector('button');
-    const inputContainer = container.querySelector('.input-container_' + (index + 2)); // index + 2 pour correspondre à la numérotation
+    const inputContainer = container.querySelector('.input-container_' + (index + 2));
 
     
     button.addEventListener('click', function() {
@@ -146,3 +152,5 @@ close__icon.addEventListener("click", function () {
     back__icon.style.display = "block"
     close__icon.style.display = "none"
 });
+
+console.log(localStorage.getItem('addedAmount'));

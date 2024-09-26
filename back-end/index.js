@@ -1,10 +1,12 @@
 "use strict";
 /* eslint-env node, es6 */
 
+const path = require('path');
 const express = require("express");
 const bodyparser = require('body-parser');
-const queries = require('./src/transactions/queries');
+const queries = require('./api/queries');
 const compression = require('compression');
+const apiRoutes = require('./api/route');
 
 const PORT = 6300;
 
@@ -12,12 +14,15 @@ const app = express();
 
 
 app.use(bodyparser.json());
+app.use(express.json());
 
 app.use(compression());
 
 app.use(express.static('public', {
     maxAge: '30d'
 }));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 const generatePageAcceuil = require("./pages/index-get");
 const pool = require("./db");
@@ -27,20 +32,13 @@ app.get("/", async (req, res) => {
     res.send(indexHTML);
 });
 
-app.post('/api/transactions', async (req, res) => {
-    const { type, amount } = req.body;
+app.use('/api', apiRoutes);
 
-    try {
-        const result = await pool.query(queries.insertData, [type, amount]);
-        res.status(201).json(result.rows[0]);
-    } catch (error) {
-        console.error(error.message);
-        res.status(500).send('Erreur de serveur');
-    }
-});
 
 app.use("/styles", express.static("D:/Projets/Getionnaire-de-budget/front-end/styles/"));
 app.use("/transfere", express.static("D:/Projets/Getionnaire-de-budget/front-end/transfere/"));
+app.use("/objectif", express.static("D:/Projets/Getionnaire-de-budget/front-end/objectif/"));
+app.use("/images", express.static("D:/Projets/Getionnaire-de-budget/front-end/images/"));
 app.use("/javascript", express.static("D:/Projets/Getionnaire-de-budget/front-end/javascript/"));
 
 app.listen(PORT, () => {
